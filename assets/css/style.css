@@ -1,0 +1,499 @@
+*{/*Có tác dụng lên tất cả mọi thứ trên web kể cả các thẻ không chứa chữ */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{/*Có tác dụng lên tất cả các chữ trên web */
+    scroll-behavior: smooth;/*Hành động cuộn của trang khi ấn vào các thẻ ở phần nav*/
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* Common */
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+.row::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.col {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.col-third {
+    width: 33.333%;
+}
+.col-haft {
+    width: 50%;
+}
+.col-full{
+    width: 100%;
+}
+.clear {
+    clear: both;/*Tác dụng giống over-flow*/
+}
+.text-white {
+    color: #fff !important;
+}
+.text-center {
+    text-align: center !important ;
+}
+.mt-8{
+    margin-top: 8px !important;
+}
+.mt-16 {
+    margin-top: 16px !important;
+}
+.mt-32 {
+    margin-top: 32px !important ;
+}
+
+
+#header{
+    height: 46px;
+    background-color: #000;
+    user-select: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;/*cho header nổi lên 1 layout so với ảnh*/
+}
+#nav{
+    display: inline-block;
+}
+#nav li { 
+    position: relative;
+}
+#nav > li {
+   display: inline-block;
+}
+#nav .subnav li {
+    list-style-type: none;
+}
+#nav .subnav{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.292);
+}
+#nav .subnav a{
+    color: black;
+    padding-left: 16px;
+    line-height: 38px;
+}
+#nav  li a {
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0 24px;
+    display:block;
+}
+#nav > li >a {
+    color: white;
+    text-transform: uppercase;
+}
+#nav > li:hover > a {
+    color: black;
+    background-color: #ccc;
+}
+#nav .subnav li:hover a{
+    color: black;
+    background-color: #ccc;
+}
+#nav li:hover .subnav{
+    display: block;
+}
+#nav .nav-arrow-down{
+    font-size: 14px;
+}
+
+#header .mobile-menu-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#header .search-btn,
+#header .mobile-menu-btn{
+    float: right;
+    padding: 0 21px;
+    cursor: pointer;
+}
+#header .search-icon,
+#header .menu-icon{
+    color: #fff;
+    font-size: 16px;
+    line-height: 46px;
+    
+}
+#header .mobile-menu-btn:hover {
+    background-color: #ccc;
+    /*Không css màu đen cho icon menu vào trong này được vì
+    độ ưu tiên của icon đã được css màu trắng cao hơn nên muốn đổi thành 
+    màu đen thì phải css đúng vào thẻ đó*/
+}
+#header .mobile-menu-btn:hover .menu-icon {
+    color: black;
+}
+#header .search-btn:hover{
+    background-color: rgba(255, 0, 0, 0.756);
+}
+#slider{
+    padding-top: 50%;/*50% chiều ngang của chính nó, 
+    làm cho tỉ lệ của chiều ngang và chiềU cao của bức ảnh luôn là 1/2*/
+    margin-top: 46px;
+    background: url(/assets/img/slider/slider1.jpg)  center / cover no-repeat;
+    position: relative;
+}
+#slider .text-content{
+    position: absolute;
+    bottom: 48px;
+    color: white;
+    text-align: center;
+    /* 2 cách căn giữa  */
+
+    /* left: 50%;
+    transform: translateX(-50%);
+
+     width: 100%; */
+
+    right: 0;
+    left: 0;
+}
+
+#slider .text-heading{
+    margin-bottom: 25px;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+#slider .text-bottom{
+    font-size: 15px;
+}
+
+#content .content-section{
+    width: 800px;
+    max-width: 100%;/*Nếu chiều rộng nhỏ hơn 800px thì 
+    width sẽ ăn theo 100% và ngược lại*/
+    margin-left: auto;
+    margin-right: auto;
+    padding: 64px 0 112px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+#content .section-heading{
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 4px;/*đẩy khoảng cách giữa các chữ trong THE BAND*/
+}
+#content .section-sub-heading{
+    font-size: 15px;
+    margin-top: 25px;
+    font-style: italic;
+    opacity: 0.6;/*độ trong suốt của chữ*/
+}
+#content .about-text {
+    margin-top: 25px;
+    font-size: 15px;
+    text-align: justify;
+    line-height: 1.4;
+}
+
+#content .section-heading,
+#content .section-sub-heading{
+    text-align: center;
+}
+#content .member-list{
+    margin-top: 32px;
+    overflow: hidden;/*Làm cho thằng cha member-list có thể ôm trọn các ông con member-item của mình*/
+}
+#content .member-name {
+    font-size: 15px;
+}
+#content .member-img {
+    width: 154px;
+    margin-top: 15px;
+    border-radius: 4px;
+}
+/*tour-section*/
+.tour-section{
+    background-color: #000;
+}
+.ticket-list{
+    background-color: #fff;
+    margin-top: 40px;
+}
+.ticket-list li {
+    list-style: none;
+    color: #757575;
+    font-size: 15px;
+    padding: 11px 16px;
+    border-bottom: 1px solid #ddd;
+}
+.ticket-list .sold-out{
+    background-color: #f44336;
+    color: #fff;
+    padding: 3px 4px;
+    margin-left: 16px;
+}
+
+.ticket-list .quantity{
+    float: right;
+    width: 24px;
+    height: 24px;
+    background: #000;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    margin-top: -3px;
+    /* khi 1 phần tử được float thì nó sẽ thoát ra khỏi dòng chảy bình thường của
+    tài liệu (nhưng vẫn là 1 phần của phần tử cha
+    1. nó không nổi ( float ) lên 1 lớp so với phần tử cha, mà chơi theo kiểu nửa vời, nửa nổi nửa không
+    +với cạnh chạm (kh float) vào cạnh của phần tử cha, ở đây là cạnh top và right, thì có sự liên hệ với cạnh của phần tử cha, do đó thì có thể margin-top và cả margin-right
+    +với cạnh k chạm (float) thì k cùng layer vs pt cha, mà cùng hệ vs html, thì k thể margin-bottom, left 
+    
+    margin dương nó sẽ đẩy phần tử khác xuống (nếu có), chứ không đẩy nó lên, 
+    nói cách khác margin dương là đầy phần tử khác, margin âm là đẩy chính nó.*/
+}
+
+/*Places */
+.places-list{
+    margin-top: 16px;
+}
+
+.place-img{
+    width: 100%;
+    vertical-align:middle;/*Căn elements theo chiều dọc*/
+    /* hoặC có thể dùng display = block vì thẻ img đang có thuộc tính inline */
+}
+.place-img:hover {
+    opacity: 0.5;
+}
+
+.place-body{
+    background-color: #fff;
+    padding: 16px;
+    font-size: 15px;
+}
+.place-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.place-time{
+    margin-top: 15px;
+    color: #757575;
+}
+
+.place-desc{
+    line-height: 1.4;
+    margin-top: 15px;
+}
+
+.btn{
+    display: inline-block;/*Cần thêm thuộc tính này vì cái btn của chúng ta là thẻ inline
+    còn phía bên trên là thẻ block mà nguyên lí chỉ có các thẻ block mới được đẩy nhau nên phải cho display
+    là inline-block*/
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    margin-top: 16px;
+    background-color: #000;
+    border: none;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: #ccc;
+    color: #000;
+}
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.modal.open {
+    display: flex;
+}
+.modal-container {
+    background-color: #fff;
+    width: 900px;
+    max-width: 95.4%;/*Khi trình duyệt nhỏ hơn 900, modal sẽ tự động co theo cái max-width*/
+    min-height: 200px;
+    position: relative;
+    animation: modalFadeIn ease .5s ;
+}
+.modal-header {
+    background-color: #009688;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    letter-spacing: 4px;
+    color: #fff;
+}
+.modal .ti-bag {
+    margin-right: 16px;
+}
+.modal-container .modal-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    padding: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    opacity: 0.8;
+}
+.modal-container .modal-close:hover {
+    background-color: #ccc;
+    color: #000;
+    opacity: 1;
+}
+.modal-body{
+    padding: 16px;
+}
+.modal-label {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+.modal-input {
+    width: 100%;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    padding: 10px;
+    margin-bottom: 24px;
+}
+#buy-tickets {
+    width: 100%;
+    padding: 18px;
+    font-size: 15px;
+    text-transform: uppercase;
+    background: #009688;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+#buy-tickets:hover {
+    color: #000;
+    background-color: #ccc;
+}
+
+.modal-footer {
+    padding: 16px;
+    text-align: right;
+    font-size: 15px;
+}
+.modal-help a {
+    color: #2196F3;
+}
+/*Làm cái trượt xuống của modal-container*/
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Contact form */
+.contact-content {
+    margin-top: 48px;
+}
+.contact-info {
+    font-size: 18px;
+    line-height: 1.4;
+}
+/* CSS cho các thẻ i có cùng class là ti- */
+.contact-info i[class*="ti-"]{
+    /* Bản thân các icon nó sẽ không to ra được
+    nên ta đặt width là để đẩy khoảng chứa nó ra 2 bên thôi */
+    width: 30px;
+    display: inline-block;
+}
+.contact-form {
+    font-size: 15px;
+}
+.contact-form .form-control{
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;  
+    outline: none;
+}
+.contact-form .form-control:focus {/*Focus là hiệu ứng chọn phần tử nào đó*/
+    outline: 1px solid red;
+}
+.form-submit-btn {
+    font-size: 15px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    float: right;
+    margin-right: 8px;
+}
+.form-submit-btn:hover {
+    color: #000;
+    background-color: #ccc;
+    cursor: pointer;
+    }
+
+
+
+/* Map section */
+.map-one {
+    width: 100%;
+}
+
+
+
+
+/*  */
+/*  */
+
+/*footer*/
+#footer{
+    padding: 64px 16px;
+    text-align: center;
+    opacity: 0.6;
+}
+#footer .socials-list a {
+    text-decoration: none;
+    font-size: 24px;
+    color: #000;
+    cursor: default;
+}
+#footer .socials-list a:hover{
+    opacity: 0.5;
+}
+#footer .copyright {
+    font-size: 15px;
+    color: #000;
+    margin-top: 15px;
+}
+
+/*
+Thuộc min-height tính xác định chiều cao tối thiểu của một phần tử.
+
+Nếu nội dung nhỏ hơn chiều cao tối thiểu, chiều cao tối thiểu sẽ được áp dụng.
+
+Nếu nội dung lớn hơn chiều cao tối thiểu, thuộc min-height tính không có hiệu lực.
+*/

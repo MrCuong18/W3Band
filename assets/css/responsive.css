@@ -1,0 +1,63 @@
+/* PC */
+@media (min-width:1024px){
+    #header .menu-icon {
+        display: none;
+    }
+}
+
+/* TABLET */
+@media (min-width:740px) and (max-width:1023px){
+    #header .menu-icon {
+        display: none;
+    }
+}
+
+/* MOBILE */
+@media (max-width:739px){
+    #nav {
+        /*sửa để người dùng bấm menu cách dễ dàng hơn*/
+        display: block;
+    }
+    #nav > li:first-child {
+        display:inline-block;
+    }
+
+    #nav > li {
+        display: block;
+    }
+    #nav .subnav {
+        position: initial;
+        background-color: #333;
+    }
+
+    #nav .subnav a {
+        color: #fff;
+        padding: 5px 42px;
+    }
+    #nav li a {
+        padding: 1px 24px;
+    }
+
+    #header .search-btn {
+        display: none;
+    }
+    #header {
+        overflow: hidden;/*Khi một hoặc nhiều thuộc tính con nào mà chòi ra khỏi thằng cha thì sẽ ẩn đi*/
+    }
+    #content .member-img {
+        width: 60%;
+    }
+    .s-full-width{
+        width: 96% !important ;
+    }
+    .s-col-full {
+        width: 100% !important ;
+    }
+    
+    #contact .s-mt-8 {
+        margin-top: 8px;
+    }
+    .contact-form {
+        margin-top: 16px;
+    }
+}
