@@ -147,7 +147,7 @@ html{/*Có tác dụng lên tất cả các chữ trên web */
     padding-top: 50%;/*50% chiều ngang của chính nó, 
     làm cho tỉ lệ của chiều ngang và chiềU cao của bức ảnh luôn là 1/2*/
     margin-top: 46px;
-    background: url(/assets/img/slider/slider1.jpg)  center / cover no-repeat;
+    background: url(/W3Band/assets/img/slider/slider1.jpg)  center / cover no-repeat;
     position: relative;
 }
 #slider .text-content{
